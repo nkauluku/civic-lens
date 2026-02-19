@@ -154,14 +154,33 @@ main > section{
   display: block;
   padding: 1rem;
   margin: 1rem;
+  border: 1px solid var(--story-subtitle);
+  box-shadow: var(--shadow);
+}
+
+#featured-articles h3{
+  border-bottom: 1px solid var(--story-subtitle);
+}
+
+form{
+  display: block;
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  padding: 1rem;
+  margin: 0.5rem 1rem;
   border: 1px solid var(--truth-text);
   box-shadow: var(--shadow);
 }
 
-#featured-article h3{
-  border-bottom: 1px solid var(--blue-bulletin);
+footer{
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  padding: 1rem;
 }
 
+footer p{
+  text-align: center;
+}
 /* ///ADD/// Global Text Styles */
 h1, h2, h3{
   font-family: var(--font-heading);
@@ -177,6 +196,7 @@ h2{
 
 h3{
   font-size: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .tagline{
