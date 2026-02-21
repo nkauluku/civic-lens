@@ -144,6 +144,11 @@ main > section{
   margin: 1rem;
   border: 1px solid var(--truth-text);
   box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+#breaking-news div:hover{
+  transform: scale(1.08, 1.08);
 }
 
 #breaking-news h3{
@@ -162,6 +167,11 @@ video{
   margin: 1rem;
   border: 1px solid var(--story-subtitle);
   box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+#featured-articles div:hover{
+  transform: scale(1.08, 1.08);
 }
 
 #featured-articles h3{
@@ -201,6 +211,10 @@ fieldset > legend{
   margin-left: 0.5rem;
 }
 
+fieldset div{
+  display: flex;
+}
+
 input[type="submit"]{
   background-color: var(--blue-bulletin);
   color: var(--watchdog-white);
@@ -208,6 +222,11 @@ input[type="submit"]{
   border: 1px inset var(--truth-text);
   box-shadow: var(--shadow);
   cursor: pointer;
+}
+
+input[type="submit"]:hover{
+  background-color: var(--watchdog-white);
+  color: var(--blue-bulletin);
 }
 
 footer{
@@ -236,6 +255,11 @@ footer a{
   color: var(--watchdog-white);
   font-weight: 500;
   padding: 0.5rem;
+}
+
+footer a:hover{
+  background-color: var(--blue-bulletin);
+  border: 1px solid var(--news-flash);
 }
 
 footer p{
