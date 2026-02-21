@@ -150,6 +150,12 @@ main > section{
   border-bottom: 1px solid var(--watchdog-white);
 }
 
+video{
+  width: 100%;
+  height: auto;
+  margin-top: 0.5rem;
+}
+
 #featured-articles div{
   display: block;
   padding: 1rem;
@@ -172,10 +178,64 @@ form{
   box-shadow: var(--shadow);
 }
 
+#alerts label{
+  display: block;
+  width: 95%;
+}
+
+#alerts input{
+  display: block;
+  width: 95%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+fieldset{
+  border: 1px solid var(--blue-bulletin);
+  width: 95%;
+  margin-bottom: 0.5rem;
+}
+
+fieldset > legend{
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+}
+
+input[type="submit"]{
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  text-transform: uppercase;
+  border: 1px inset var(--truth-text);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
 footer{
   background-color: var(--blue-bulletin);
   color: var(--watchdog-white);
   padding: 1rem;
+}
+
+footer ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+footer li{
+  margin-top: 1rem;
+}
+
+footer a{
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  font-weight: 500;
+  padding: 0.5rem;
 }
 
 footer p{
