@@ -102,6 +102,43 @@ body.dark-mode {
 }
 
 /* ///ADD/// Navigation Styles */
+.menu-button{
+  display: flex;
+  width: 100%;
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  text-transform: uppercase;
+  font-weight: 600;
+  justify-content: center;  
+  padding: 0.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.menu-button:hover{
+  background-color: var(--blue-bulletin);
+  border: 1px solid var(--news-flash);
+}
+
+.menu{
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.menu a{
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--watchdog-white);
+  background-color: var(--news-flash);
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.menu-button:checked .menu{
+  display: block;
+}
 
 /* ///ADD/// Global Layout Styles */
 *{
@@ -190,20 +227,21 @@ form{
 
 #alerts label{
   display: block;
-  width: 95%;
+  width: 100%;
 }
 
 #alerts input{
   display: block;
-  width: 95%;
+  width: 100%;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 fieldset{
   border: 1px solid var(--blue-bulletin);
-  width: 95%;
+  width: 100%;
   margin-bottom: 0.5rem;
+  padding: 0.25rem;
 }
 
 fieldset > legend{
@@ -211,15 +249,67 @@ fieldset > legend{
   margin-left: 0.5rem;
 }
 
-fieldset div{
-  display: flex;
+#alerts input[type="checkbox"]{
+  appearance: none;
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+#alerts input[type="checkbox"] + label{
+  position: relative;
+  padding-left: 1.5rem;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1rem;
+  margin: 0.5rem;
+}
+
+#alerts input[type="checkbox"] + label::before{
+  content:"";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1px;
+  outline: 1px solid var(--truth-text);
+  background-color: var(--watchdog-white);
+}
+
+#alerts input[type="checkbox"]:checked + label::before{
+  content:"";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1px;
+  outline: 1px solid var(--blue-bulletin);
+  background-color: var(--blue-bulletin);
+}
+
+#alerts input[type="checkbox"]:checked + label::after{
+  content: url(images/check-mark-15.png);
+  color: var(--watchdog-white);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1px;
+  outline: 1px solid var(--blue-bulletin);
+  background-color: var(--blue-bulletin);
 }
 
 input[type="submit"]{
   background-color: var(--blue-bulletin);
   color: var(--watchdog-white);
   text-transform: uppercase;
-  border: 1px inset var(--truth-text);
+  border: 1px outset var(--truth-text);
   box-shadow: var(--shadow);
   cursor: pointer;
 }
