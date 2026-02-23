@@ -103,16 +103,18 @@ body.dark-mode {
 
 /* ///ADD/// Navigation Styles */
 .menu-button{
-  display: flex;
+  display: block;
   width: 100%;
   background-color: var(--news-flash);
   color: var(--watchdog-white);
+  border: 1px solid var(--blue-bulletin);
   text-transform: uppercase;
+  text-align: center;
   font-weight: 600;
-  justify-content: center;  
   padding: 0.5rem;
   margin-top: 1rem;
   cursor: pointer;
+  transition: var(--transition);
 }
 
 .menu-button:hover{
@@ -120,24 +122,36 @@ body.dark-mode {
   border: 1px solid var(--news-flash);
 }
 
-.menu{
-  display: none;
-  position: absolute;
-  width: 100%;
+.mobile-nav{
+  position: relative;
 }
 
 .menu a{
   display: block;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
   color: var(--watchdog-white);
   background-color: var(--news-flash);
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  border: 1px solid var(--blue-bulletin);
   visibility: visible;
+  padding: 0.5rem;
+  transition: var(--transition);
 }
 
-#menu-toggle:checked .menu{
+.menu a:hover{
+  background-color: var(--blue-bulletin);
+  border: 1px solid var(--news-flash);}
+
+.menu {
+  display: none;
+  position: absolute;
+  background-color: var(--blue-bulletin);
+  width:100%;
+  top: 2.75rem;
+}
+
+#menu-toggle:checked ~ .menu{
   display: block;
 }
 
@@ -175,7 +189,7 @@ main > section{
   padding-top: 1rem;
 }
 
-#breaking-news div{
+#breaking > section{
   display: block;
   background-color: var(--news-flash);
   color: var(--watchdog-white);
@@ -186,7 +200,7 @@ main > section{
   transition: var(--transition);
 }
 
-#breaking-news div:hover{
+#breaking > section:hover{
   transform: scale(1.08, 1.08);
 }
 
@@ -200,7 +214,7 @@ video{
   margin-top: 0.5rem;
 }
 
-#featured-articles div{
+#featured > section{
   display: block;
   padding: 1rem;
   margin: 1rem;
@@ -209,7 +223,7 @@ video{
   transition: var(--transition);
 }
 
-#featured-articles div:hover{
+#featured section:hover{
   transform: scale(1.08, 1.08);
 }
 
@@ -310,10 +324,12 @@ fieldset > legend{
 input[type="submit"]{
   background-color: var(--blue-bulletin);
   color: var(--watchdog-white);
+  font-weight: 500;
   text-transform: uppercase;
   border: 1px outset var(--truth-text);
   box-shadow: var(--shadow);
   cursor: pointer;
+  transition: var(--transition);
 }
 
 input[type="submit"]:hover{
@@ -333,7 +349,7 @@ footer ul{
   flex-wrap: wrap;
   list-style: none;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 footer li{
@@ -347,6 +363,8 @@ footer a{
   color: var(--watchdog-white);
   font-weight: 500;
   padding: 0.5rem;
+  transition: var(--transition);
+  border: 1px solid var(--blue-bulletin);
 }
 
 footer a:hover{
@@ -363,7 +381,8 @@ h1, h2, h3{
 }
 
 h1{
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 400;
 }
 
 h2{
@@ -381,16 +400,90 @@ h3{
 }
 
 /* ///ADD/// medium styles 620px */
+@media screen and (min-width: 620px) {
+  .menu-button{
+    visibility: hidden;
+  }
 
+  .menu{
+    display: flex;
+    gap: 1rem;
+    visibility: visible;
+    position: absolute;
+    top: 0;
+  }
 
+  #breaking{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem;
+  }
+
+  #breaking > section{
+    margin: 0;
+  }
+
+  #featured{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem;
+  }
+
+  #featured > section{
+    margin: 0;
+  }
+
+  form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  fieldset{
+    grid-column: -1/1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.25rem;
+  }
+
+  input[type="submit"]{
+    grid-column: -1/1;
+  }
+
+} 
 /* ///ADD/// large styles 920px */
+@media screen and (min-width: 920px) {
+  #featured{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem;
+  }
 
+  fieldset{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.25rem;
+  }
+  
+}
 
 /* ///ADD/// x-large styles 1024px */
-
+@media screen and (min-width: 1024px) {
+  header, main, footer{
+    padding: 2rem 4rem;
+  }
+}
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
-
+@media (prefers-color-scheme: dark){
+  body{
+    background-color: var(--truth-text);
+    color: var(--watchdog-white);
+  }
+}
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
