@@ -93,6 +93,8 @@ body.dark-mode {
   width:1px;
   height:1px;
   overflow:hidden;
+  background-color: var(--watchdog-white);
+  border: 1px solid var(--blue-bulletin);
 }
 
 .sr-only:focus{
@@ -317,18 +319,19 @@ fieldset > legend{
   background-color: var(--blue-bulletin);
 }
 
-input[type="submit"]{
+#alerts input[type="submit"]{
   background-color: var(--blue-bulletin);
   color: var(--watchdog-white);
-  font-weight: 500;
+  font-size: 1.1rem;
   text-transform: uppercase;
   border: 1px outset var(--truth-text);
   box-shadow: var(--shadow);
   cursor: pointer;
   transition: var(--transition);
+  padding: 0.75rem;
 }
 
-input[type="submit"]:hover{
+#alerts input[type="submit"]:hover{
   background-color: var(--watchdog-white);
   color: var(--blue-bulletin);
 }
@@ -378,21 +381,27 @@ h1, h2, h3{
 
 h1{
   font-size: 2.5rem;
-  font-weight: 400;
+  font-weight: 200;
+  font-stretch: 150%;
 }
 
 h2{
   font-size: 1.5rem;
+  font-weight: 400;
+  font-stretch: 125%;
 }
 
 h3{
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  font-weight: 200;
+  font-stretch: 125%;
 }
 
 .tagline{
-  font-weight: bold;
+  font-weight: 600;
   font-family: var(--font-heading);
+  font-stretch: 75%;
 }
 
 /* ///ADD/// medium styles 620px */
@@ -469,7 +478,7 @@ h3{
 /* ///ADD/// x-large styles 1024px */
 @media screen and (min-width: 1024px) {
   header, main, footer{
-    padding: 2rem 4rem;
+    padding: 1rem 6rem;
   }
 }
 
